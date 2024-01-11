@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { EmployeeService } from './employee.service';
-import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    CommonModule,
-    BrowserModule.withServerTransition({appId:'serverApp'}),
-    HttpClientModule
-  ],
+  imports: [BrowserModule, HttpClientModule],
   providers: [EmployeeService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

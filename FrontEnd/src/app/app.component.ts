@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
-import {Employee} from './employee'
+import { Employee } from './employee';
 import { EmployeeService } from './employee.service';
 
 @Component({
@@ -9,13 +9,14 @@ import { EmployeeService } from './employee.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  public employees: Employee[]= [];
+  public employees: Employee[] = [];
 
-  constructor(private employeeService: EmployeeService){}
+  constructor(private employeeService: EmployeeService) {}
 
   ngOnInit() {
     this.getEmployees();
   }
+
   public getEmployees(): void {
     this.employeeService.getEmployees().subscribe(
       (response: Employee[]) => {
